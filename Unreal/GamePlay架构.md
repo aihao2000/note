@@ -103,7 +103,7 @@ class UGameplayStatics : public UBlueprintFunctionLibrary
 - 可探查世界对象
 - 可同步
 
-![image-20220705142308829](E:\note\Unreal\GamePlay架构.assets\image-20220705142308829.png)
+![image-20220705142308829](GamePlay%E6%9E%B6%E6%9E%84.assets/image-20220705142308829.png)
 
 ### 功能
 
@@ -113,9 +113,7 @@ class UGameplayStatics : public UBlueprintFunctionLibrary
 
 ### PlayerController
 
-![image-20220705145357101](E:\note\Unreal\GamePlay架构.assets\image-20220705145357101.png)
-
-### 功能
+### ![image-20220705145357101](GamePlay%E6%9E%B6%E6%9E%84.assets/image-20220705145357101.png)功能
 
 - Camera的管理，通过PlayerCameraManager这一个关联的很紧密的摄像机管理类
 
@@ -141,6 +139,4 @@ class UGameplayStatics : public UBlueprintFunctionLibrary
 
 切换关卡时，APlayerState也会被释放掉。
 
-![image-20220705144441749](E:\note\Unreal\GamePlay架构.assets\image-20220705144441749.png)
-
->>>>>>> c0e423a5bc4e8626f4283feb5a76e142399b73c3
+![image-20220705144441749](GamePlay%E6%9E%B6%E6%9E%84.assets/image-20220705144441749.png)
