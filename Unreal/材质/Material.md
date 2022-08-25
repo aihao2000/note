@@ -2,7 +2,7 @@
 
 ## Roughness
 
-词槽都
+粗糙度
 
 ## Metallic
 
