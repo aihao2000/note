@@ -32,7 +32,7 @@ git diff -cached
 - --staged
   ```bash
   对比已暂存的与最后一次提交的文件差异
-  ```
+```
 # .gitignore
 git 忽略的文件
 - 所有空行或者以#开头的行都会被git忽略
@@ -94,7 +94,7 @@ git mv file_from file_to
 ```
 # branch
 - -l
---list
+  --list
   - -r 
   ```bash
   #remote-tracking branches
@@ -237,7 +237,7 @@ git remote
   #添加远程仓库
   git remote add <shortname> <url>
   git remote add pb https://github.com/paulboone/ticgit
-
+  
   ```
 - show
   
@@ -245,7 +245,7 @@ git remote
   # 显示<remote>的信息
   git remote show <remote>
   ```
-- rebane
+- rename
   
   ```bash
   # 改写远程仓库的简写名,与此同时所有远程跟踪的分支名字也会更新
@@ -270,7 +270,7 @@ git remote
   git tag -a <tag_name> [<commit_id>] -m <tag_info>
   # 创建轻量标签v1.4，附加信息"my version 1.4"
   git tag -a v1.4 -m "my version 1.4"
-
+  
   ```
 - 共享标签
   默认情况下，git push不会传送标签到远程仓库服务器上，需要显式的命令

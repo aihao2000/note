@@ -12,6 +12,4 @@
   FText ftext=FTEXT::FromString(fstring);
   ```
 
-  
-
-  
+- FText::FromName
