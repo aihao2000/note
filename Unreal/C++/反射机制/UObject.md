@@ -113,56 +113,8 @@ RTTI（Run TIme Type Identification）
 
 - UE的HUT方案
 
-  利用宏最标记，然后用UHT分析生成generated.h/.cpp文件，一起编译
+  - 
 
-  UE中形成的结构：
-
-  ![image-20220829144203392](UObject.assets/image-20220829144203392.png)
-  
-  
-  
-  - 聚合类型（UStruct）
-  
-    把距离和类型们统一起来，就形成了UStruct基类。
-  
-    注：C++中USTRUCT宏生成了类型数据使用UScriptStruct来表示的
-  
-    - UFunction
-  
-      可包含属性作为函数的输入输出参数。
-  
-    - UScriptStruct
-  
-      “轻量”UObject，但其不受GC控制
-  
-    - UClass
-  
-      包含属性和函数
-  
-  - 原子类型
-  
-    - UEnum
-  
-      支持普通的美剧和enum class
-  
-    - UProperty
-  
-      int，FString等基础类型通过UProperty子类来支持
-  
-      可以理解为用一个类型定义个字段 “type instance”。
-  
-      UE有Property，Property有很多子类，如UBoolProperty，UStrProperty...。
-  
-  - 接口
-  
-    UInterface继承自UObject
-  
-    UObect可以继承多个接口，跟C++中的虚类一样，不同的是UE中的接口只可以包含函数。
-  
-  - UMetaData
-  
-    其实就是TMap<FName,FString>的键值对。
-  
 
 ## 类型系统代码生成
 
