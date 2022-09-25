@@ -1,3 +1,13 @@
+## 静态链接库和动态链接库的区别
+
+- 静态链接库：
+
+  链接时完整地拷贝至可执行文件中，被多次使用就会有多份冗余拷贝
+
+- 动态链接库
+
+  连接时不复制，程序运行时由操作系统加载到内存供程序调用
+
 ```cpp
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
