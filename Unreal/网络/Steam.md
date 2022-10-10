@@ -1,6 +1,8 @@
 # Steam开发流程
 
-- 
+## 项目配置
+
+- 启用OnlineSubsystem Steam Plugin
 
 - {ProjectName}.Build.cs
 
@@ -15,7 +17,7 @@
   );
   ```
 
-- 修改DefaultEngine.ini
+- 修改{ProjectName}\Config\DefaultEngine.ini
 
   添加
 
@@ -37,26 +39,18 @@
   NetConnectionClassName="OnlineSubsystemSteam.SteamNetConnection"
   ```
 
-- 代码中获取OnlineSubsystem
+  480可以直接用于测试
 
-  ```cpp
-  IOnlineSubsystem* OnlineSubsystem=IOnlineSubsystem::Get();
-  ```
+- 删除
 
-- 获取接口
+  - **{ProjectName}\Saved**
+  -  **{ProjectName}\Intermediate** 
+  - **{ProjectName}\Binaries**
 
-  ```cpp
-  IOnlineSessionPtr OnlineSessionInterface=OnlineSubsystem->GetSessionInterface();
-  //在头文件时，不可使用前置声明，因为IOnlineSessionPtr是使用typedef定义的
-  TSharedPtr<class IOnlineSession,ESPMode::ThreadSafe> OnlineSessionInterface;
-  ```
+- 右键**{ProjectName}.uproject**       点击**Generate VisualStudio project files**
 
-  - IOnlineSessionPtr
+- 双击**{ProjectName}.uproject** 打开项目
 
-    ```cpp
-    typedef TSharedPtr<class IOnlineSession,ESPMode::ThreadSafe>  IOnlineSessionPtr
-    ```
+ 
 
-    
-
-- 
+  

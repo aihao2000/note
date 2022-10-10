@@ -1,5 +1,7 @@
 # api
 
+## Travel
+
 - ServerTravel
 
   ```cpp
@@ -33,6 +35,4 @@
   GetGameInstance()->GetFirstLocalPlayerController()->ClientTravel();
   
   ```
-
-  
 
