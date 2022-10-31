@@ -4,3 +4,7 @@
 
 负责管理协调其他部件
 
+## 成员函数
+
+- TryActivateAbility
+- CancelAbility
