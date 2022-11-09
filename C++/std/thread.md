@@ -1,5 +1,80 @@
 # thread
 
+## 构造函数（启动线程）
+
+### 通过全局函数构造
+
+```cpp
+void do_some_work();
+std::thread my_thread(do_some_work);
+```
+
+### 通过类成员函数构造
+
+第二个参数需要传启动函数所属对象的地址
+
+```cpp
+class A
+{
+public:
+	void Af(int a,int b)
+	{
+		cout << a << ' ' << b;
+	}
+	void run()
+	{
+		int a = 1, b = 2;
+		thread t(&A::Af, this,a, b);
+		t.join();
+	}
+};
+```
+
+### 通过可调用类型构造
+
+```cpp
+class background_task
+{
+public:
+  void operator()() const
+  {
+    do_something();
+    do_something_else();
+  }
+};
+background_task f;
+std::thread my_thread(f);
+
+std::thread my_thread((background_task()));  // 正确
+std::thread my_thread{background_task()};    // 正确
+std::thread my_thread(background_task()); //错误，会被解析定义了个返回值为std::thread的函数
+```
+
+提供的函数对象会复制到新线程的存储空间中
+
+## 传递参数
+
+传递引用参数使用std::ref
+
+```cpp
+class A
+{
+public:
+	void f(int& a,int b)
+	{
+		cout << a << ' ' << b;
+	}
+	void run()
+	{
+		int a = 1, b = 2;
+		thread t(&A::f, this,std::ref(a), b);
+		t.join();
+	}
+};
+```
+
+
+
 ## .native_handle()
 
 允许通过使用相关平台的API直接操作底层实现
