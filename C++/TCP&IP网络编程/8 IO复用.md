@@ -66,7 +66,7 @@ int select(int maxfd,fd_set *readset,fd_set *writeset,fd_set *exceptset,const st
 
 ## epoll
 
-### eploll_create
+### epoll_create
 
 创建文件描述符，通常称为“epoll例程”
 
