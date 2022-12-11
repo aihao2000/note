@@ -7,6 +7,7 @@
   redis-cli -h <host> -p <port> -a <password>
   ```
 # 数据类型
+
 - key
      - DEL
        ```bash
@@ -17,7 +18,7 @@
        ```bash
        # 序列化给定<key>
        DUMP <key>
-       ``` 
+       ```
      - EXISTS
        ```bash
        EXISTS <key>
@@ -26,11 +27,11 @@
        ```bash
        # 为给定key设置过期时间，以秒计
        EXPIRE <key> <seconds>
-       ``` 
+       ```
     - EXPIREAT
        ```
-
-       ```  
+       
+       ```
 - String
 - Hash
 - List
