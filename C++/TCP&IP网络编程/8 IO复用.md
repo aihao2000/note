@@ -124,3 +124,36 @@ int epoll_wait(int epfd,struct epoll_event *events,int maxevents,int timeout);
 - timeout
 
   已1/1000秒为单位的等待时间，传递-1时，一直等待直到发生事件
+
+# IO复用原理
+
+## socket概念补充
+
+socket会创建一个由文件系统管理的socket对象。
+
+socket对象包含了：
+
+- 发送缓冲区
+
+- 接收缓冲区
+
+- 等待队列
+
+  指向所有需要等待该socket事件的进程
+
+socket接收到数据后，操作系统将该socket等待队列上的进程重新放回到工作队列。
+
+socket对应着一个端口号，网络数据包包含了ip和端口的信息。
+
+## select流程
+
+- 调用select后，操作系统把进程A分别加入socket的等待队列
+- 任何一个socket收到数据，中断将换起进程
+
+## epoll流程
+
+- epoll_create，内核会创建一个eventpoll对象（文件系统的一员），也会拥有等待队列
+- epoll_ctl，内核会将eventpoll添加到这三个6的等待队列中
+- socket收到数据，中断程序会给eventpoll的就绪列表rdlist添加socket引用
+- epoll_wait，如果rdlist已经引用了socket，直接返回，如果为空，阻塞进程，把该进程加入eventpoll的等待队列中
+- socket接收到数据，中断程序一方面修改rdlist，另一方面唤醒eventpoll等待队列中的进程
