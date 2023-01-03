@@ -153,7 +153,7 @@ socket对应着一个端口号，网络数据包包含了ip和端口的信息。
 ## epoll流程
 
 - epoll_create，内核会创建一个eventpoll对象（文件系统的一员），也会拥有等待队列
-- epoll_ctl，内核会将eventpoll添加到这三个6的等待队列中
+- epoll_ctl，内核会将eventpoll添加到这三个的等待队列中
 - socket收到数据，中断程序会给eventpoll的就绪列表rdlist添加socket引用
 - epoll_wait，如果rdlist已经引用了socket，直接返回，如果为空，阻塞进程，把该进程加入eventpoll的等待队列中
 - socket接收到数据，中断程序一方面修改rdlist，另一方面唤醒eventpoll等待队列中的进程
