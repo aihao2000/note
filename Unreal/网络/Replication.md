@@ -24,7 +24,7 @@ Replication指服务器向客户端发送数据的单向行为。数据不会从
 
 ## Network Role
 
-当前端对Actor的控制权。也可以说时actor的一个属性，Actor在网络模型中扮演的角色。
+当前端对Actor的控制权。也可以说是actor的一个属性，Actor在网络模型中扮演的角色。
 
 Local Role和Remote Role变量，可取以下值：
 
@@ -32,7 +32,7 @@ Local Role和Remote Role变量，可取以下值：
 
   不在网络游戏中扮演任何角色，并且无复制
 
-- Authority 主控
+- Authority_Proxy 主控
 
   这一个权威版本的Actor，它讲同步他的信息给其他机器上的代理版本
 
@@ -205,8 +205,14 @@ class ENGINE_API AActor : public UObject
 
   <u>只有当您知道要手动命名组件以便其在服务器和客户端上具有相同名称时，才应当使用这种方法（最好的例子就是 C++ 构造函数中添加的组件） AActor</u>
 
+## 复制子对象
+
+Actor现在具有将子对象注册到所属Actor或Actor**组件**上的列表的方法。
+
+这些已注册子对象的复制由**Actor**通道自动处理。Actor::ReplicateSubobjects
+
+//TO LEARN
+
 ## RepNotify 
 
 RepNotify函数将在标记为ReplicatedUsing的变量被远程复制信息变更时调用。
-
-## 
