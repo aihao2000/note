@@ -281,6 +281,5 @@ $$
 Q_{t+1}(x,a)=\sum_{i=0}^{t}\gamma^{i}r_{i+1} \\
 =r_1+\gamma\sum_{t=1}^{t}\gamma^{i-1}r_{i+1} \\
 =R_{x->x'}^a+\gamma V(x') \\
-=R_{x->x'}^a+\gamma Q(x',a') 
- 
+=R_{x->x'}^a+\gamma Q(x',a')
 $$

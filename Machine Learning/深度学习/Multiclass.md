@@ -58,8 +58,8 @@ model.fit(
 ```python
 preferred_model = Sequential(
     [ 
-        Dense(25, activation = 'relu'),
-        Dense(15, activation = 'relu'),
+        Dense(25, activation = 'relu'，kernel_regularizer=tf.keras.regularizers.l2(0.1)),
+        Dense(15, activation = 'relu'，kernel_regularizer=tf.keras.regularizers.l2(0.1)),
         Dense(4, activation = 'linear')   #<-- Note
     ]
 )
