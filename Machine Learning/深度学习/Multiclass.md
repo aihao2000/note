@@ -123,6 +123,14 @@ model.fit(
 
 ![image-20230205004119951](./Multiclass.assets/image-20230205004119951.png)
 
+## 数学
+
+$$
+dz=\hat y-y
+$$
+
+
+
 
 
 ## 多标签分类问题(multi-label classification)
