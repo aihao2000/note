@@ -165,7 +165,7 @@ int* count_p /* out */);
 
 ## 通信模式
 
-![image-20230321203412068](./Open-MPI.assets/image-20230321203412068.png)
+![image-20230321203412068](./OpenMPI.assets/image-20230321203412068.png)
 
 ## 集体函数
 
