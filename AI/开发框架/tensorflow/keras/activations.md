@@ -1,0 +1,3 @@
+# activations
+
+## softmax
