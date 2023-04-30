@@ -77,6 +77,17 @@ Q(\theta,\theta^{(i)})=\sum_Z{P(Z|Y,\theta^{(i)})logP(Y,Z|\theta)}\\
 =E[(logP(Y,Z|\theta)|Y,\theta^{(i)}]\\
 $$
 
+## ELBO导出
+
+$$
+log(p_\theta(x))\ge B(\theta,\theta^{(i+1)})\\
+=L(\theta^{(i)})+\sum_Z{P(Z|Y,\theta^{(i)})\log(\frac{P(Y|Z,\theta)P(Z|\theta)}{P(Z|Y,\theta^{(i)})P(Y|\theta^{(i)})})}\\
+\theta^{(i+1)}=arg\max_\theta Q(\theta,\theta^{(i)})\\
+Q(\theta,\theta^{(i)})=E[(logP(Y,Z|\theta)|Y,\theta^{(i)}]\\
+$$
+
+
+
 
 
 **多元变量的条件期望是指在给定一些随机变量的取值时，另外一些随机变量的期望值。假设我们有一个 $n$ 维随机向量 $\mathbf{X} = (X_1, X_2, \ldots, X_n)^T$，我们感兴趣的是在给定一些子向量 $\mathbf{Y} = (Y_1, Y_2, \ldots, Y_m)^T$ 的取值时，另外一些子向量 $\mathbf{Z} = (Z_1, Z_2, \ldots, Z_{n-m})^T$ 的条件期望。**
