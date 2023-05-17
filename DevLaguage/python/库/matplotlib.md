@@ -1,5 +1,9 @@
 # matplotlib
 
+```python
+import matplotlib.pyplot as plt
+```
+
 matplotlib在 figure（图）上绘制数据，每个小部件可以包含一个或多个Axes（轴）
 
 ![image-20230121204845173](./matplotlib.assets/image-20230121204845173.png)
