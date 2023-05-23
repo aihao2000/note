@@ -168,3 +168,5 @@ tf.keras.layers.Bidirectional(
 
   keras.layers.Layer
 
+## MultiHiddenAttention
+
