@@ -18,6 +18,23 @@
 
 ## Input
 
+## Permute
+
+对轴进行重排列，接受一个元组参数，标识重排列后的轴
+
+```python
+k = keras.layers.Permute((3, 1, 2))(k)
+# (b,h,w,c)变为了 (b,c,h,w)
+```
+
+## Lambda
+
+接受一个函数，允许将任意的函数作为一个kears层
+
+```python
+keras.layers.Lambda(lambda x: 1 / 0.18215 * x)
+```
+
 
 
 ## Activation
@@ -27,6 +44,10 @@
 ```python
 Dot(axes)([])
 ```
+
+## Dense
+
+全连接层，当接受更高维的输入时，会自动展平成一维
 
 ## 卷积神经网络
 
@@ -66,9 +87,9 @@ Concatenate(axis)
 
 - 输入
 
-  输入为一个整数型矩阵(batch size,max input length),
+  输入为一个整数型矩阵(batch size,max input length)
 
-  该输入对应位转换为索引的句子，因此最大的整数不会超过词库大小
+  $input[i]$为第i个位置单词对应词典的索引值
 
 - 输出
 
@@ -77,7 +98,7 @@ Concatenate(axis)
 
 ```python
  def __init__(self,
-               input_dim,# 单词个数
+               input_dim,# 词典个数，索引最大值+1
                output_dim,# 编码维度
                embeddings_initializer='uniform',
                embeddings_regularizer=None,
@@ -168,5 +189,5 @@ tf.keras.layers.Bidirectional(
 
   keras.layers.Layer
 
-## MultiHiddenAttention
+## MultiHeadAttention
 
