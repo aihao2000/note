@@ -1,5 +1,12 @@
+## config
+
+```shell
+git config --global user.name "AisingioroHao0"
+git config --global user.email "AisingioroHao0@outlook.com"
+```
 
 # clone
+
 - b
   ```bash
   # 指定分支

@@ -2,10 +2,12 @@
 
 非对称加密组件，用于通讯
 
+
+
 # 生成ssh
 
 ```git
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -C "your_email@example.com"
 ```
 
 - -t指定密钥类型
