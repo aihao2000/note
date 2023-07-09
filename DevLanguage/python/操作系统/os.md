@@ -30,6 +30,8 @@ import os
   os.removedirs（r“c：\python”）
   ```
 
+  若想要递归删除整个目录，使用shutil.rmtree
+
 - 运行shell命令
 
   ```python

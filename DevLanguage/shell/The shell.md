@@ -2,7 +2,7 @@
 ## man
 manual
 ## pwd
-print working directory
+打印当前工作路径
 ## ls
 list files
 ## ps
