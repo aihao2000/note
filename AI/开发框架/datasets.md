@@ -67,6 +67,8 @@ dataset = dataset.map(tokenization, batched=True)
 
 ### set_transform
 
+将会再取数据条目时自动应用transform，不会对原数据集造成影响
+
 ## 设置数据集格式
 
 ### set_format
