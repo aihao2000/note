@@ -22,3 +22,7 @@
   
 - logging_dir
 
+## accelerate launch
+
+- --multi_gpu 
+- --num_processes

@@ -6,9 +6,31 @@
 
 ## call
 
+参数：
+
+- max_length
+
+  可以从text_encoder中取得text_encoder.config.max_position_embeddings
+
+  也可以从tokenizer本身取得tokenizer.model_max_length
+
+  也可以自定义
+
+- padding
+
+  - "max_length"
+  
+- return_tensors
+
+  是否返回一个张量
+  
+  - "pt"
+  
+    pytorch tensors
+
 返回一个字典,包含
 
-- input_id
+- input_ids
 
   替换单词为索引后的序列
 

@@ -48,6 +48,16 @@ pipeline = StableDiffusionPipeline.from_pretrained(repo_id, scheduler=dpm)
 
 ## 不同scheduler的特点
 
+### 线性模型
+
+| Scheduler 名字                                               | 效果                           |
+| ------------------------------------------------------------ | ------------------------------ |
+| [LMSDiscreteScheduler](https://huggingface.co/docs/diffusers/v0.17.1/en/api/schedulers/lms_discrete#diffusers.LMSDiscreteScheduler) | 通常会带来更改好的结果         |
+| [EulerDiscreteScheduler](https://huggingface.co/docs/diffusers/v0.17.1/en/api/schedulers/euler#diffusers.EulerDiscreteScheduler) ，[EulerAncestralDiscreteScheduler](https://huggingface.co/docs/diffusers/v0.17.1/en/api/schedulers/euler_ancestral#diffusers.EulerAncestralDiscreteScheduler) | 可以使用仅仅30步生成高质量结果 |
+| [DPMSolverMultistepScheduler](https://huggingface.co/docs/diffusers/v0.17.1/en/api/schedulers/multistep_dpm_solver#diffusers.DPMSolverMultistepScheduler) | 速度质量权衡，仅需二十步       |
+
+### 非线性模型
+
 | Scheduler 名字                                               | 效果                           |
 | ------------------------------------------------------------ | ------------------------------ |
 | [LMSDiscreteScheduler](https://huggingface.co/docs/diffusers/v0.17.1/en/api/schedulers/lms_discrete#diffusers.LMSDiscreteScheduler) | 通常会带来更改好的结果         |

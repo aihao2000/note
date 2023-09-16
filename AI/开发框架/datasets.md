@@ -219,7 +219,7 @@ FieldType可以是：
 
 #### spilt
 
-实现\_spilt\_enerators【下载及】生成split
+实现```_spilt_generators```【下载及】生成split
 
 需要下载，则使用DownloadManager.download()方法下载数据集
 

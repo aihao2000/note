@@ -1,5 +1,11 @@
 # TextModel
 
+## call
+
+返回BaseModelOutputWithPooling，包含：
+
+- last_hidden_state
+
 ## resize_token_embeddings
 
 根据新的长度增加新的embedding向量

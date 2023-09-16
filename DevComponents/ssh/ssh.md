@@ -12,6 +12,10 @@ ssh-keygen -C "your_email@example.com"
 
 - -t指定密钥类型
 
+  ```-t ed25519```
+
+- 
+
 # ssh-agent
 
 ```
