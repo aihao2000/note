@@ -103,7 +103,7 @@ q,v需要Permute((2,1,3))，即分解后的shape为(bs，n_heads，txt_len，hea
 
 w=q@k*head_dim**-0.5
 
-若含有mask（bs，1，txt_len，txt_len），行向量代表单词的忽略向量（单词i忽略单词j则mask[i][j]=-inf），则可以w=w+mask实现mask机制
+若含有mask（bs，1，txt_len，txt_len），行向量代表单词的忽略向量（单词i忽略单词j则mask\[i]\[j]=-inf），则可以w=w+mask实现mask机制
 
 w=softmax(w)
 

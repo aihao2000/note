@@ -35,3 +35,7 @@ rsync -Pat path1/A/ path2/A
 ## --info=progress2
 
 显示总体进度
+
+## --dry-run
+
+比较差异但不实际同步
