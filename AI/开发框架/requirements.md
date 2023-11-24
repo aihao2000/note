@@ -1,3 +1,7 @@
+# env
+
+## huggingface workflow
+
 ```shell
 torch 
 torchvision 
@@ -8,6 +12,10 @@ transformers
 huggingface_hub
 accelerate
 datasets
+ftfy
+tensorboard
+warndb
+Jinja2
 bitsandbytes
 xformers
 deepspeed

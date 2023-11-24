@@ -102,5 +102,7 @@ RUN pip install kornia
 RUN pip install timm
 RUN pip install pytorch-lightning
 RUN pip install scipy
+RUN pip install tensorboard
+RUN pip install wandb
 ```
 

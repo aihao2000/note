@@ -1,9 +1,19 @@
-## config
+# config
 
 ```shell
 git config --global user.name "AisingioroHao0"
 git config --global user.email "AisingioroHao0@outlook.com"
 ```
+
+
+
+防止文件权限发生变化时，git监测到更改
+
+```shell
+git config core.filemode false
+```
+
+
 
 # clone
 
@@ -305,4 +315,11 @@ git remote
   # 当前仓库将处于“分离头指针状态”，在此状态下的提交不属于任何分支，只能通过提交哈希才能访问
   git checkout <tag_name>
   ```
+
+## stash
+
+```shell
+git stash 
+git stash apply
+```
 

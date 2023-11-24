@@ -25,3 +25,10 @@ tmux attach-session
 - -t
 
   指定会话名，若不指定attach到最近一个会话
+
+## 设置鼠标滚动
+
+```shell
+tmux set mouse on
+```
+
