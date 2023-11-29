@@ -81,28 +81,45 @@ docker image build . --build-arg UID=$(id -u) --tag aihao_worksapce:v1
 
 
 ```dockerfile
-FROM pytorch/pytorch:2.1.1-cuda12.1-cudnn8-runtime
-LABEL author="aihao" email="aihao@xiaohongshu.com"
-RUN pip install torch 
-RUN pip install torchvision 
-RUN pip install torchaudio
-RUN pip install diffusers
-RUN pip install transformers
-RUN pip install huggingface_hub
-RUN pip install accelerate
-RUN pip install datasets
-RUN pip install bitsandbytes
-RUN pip install xformers
-RUN pip install deepspeed
-RUN pip install numpy
-RUN pip install opencv_python
-RUN pip install tqdm
-RUN pip install watermark
-RUN pip install kornia
-RUN pip install timm
-RUN pip install pytorch-lightning
-RUN pip install scipy
-RUN pip install tensorboard
-RUN pip install wandb
+FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+LABEL author="aihao2000" email="aihao2000@outlook.com"
+RUN pip install \ 
+    diffusers==0.21.0 \
+    transformers \
+    huggingface_hub \
+    accelerate \
+    tensorboard \
+    wandb \
+    datasets \
+    bitsandbytes \
+    deepspeed \
+    numpy \
+    opencv_python \
+    tqdm \
+    watermark \
+    kornia \
+    timm \
+    pytorch-lightning \
+    scipy \
+    jupyter \
+    && pip install xformers --index-url https://download.pytorch.org/whl/cu118 \
+    && pip cache purge \
+    && conda clean -all
+RUN apt update && apt install -y git \
+    git-lfs \
+    vim \
+    curl \
+    wget \
+    tmux \
+    rsync \
+    && rm -rf /var/lib/apt/lists/* && apt clean && apt autoremove -y
+```
+
+## 用户权限配置
+
+```shell
+sudo group docker
+sudo gapsswd -a $username docker
+newgrp docker
 ```
 
