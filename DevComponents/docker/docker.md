@@ -95,6 +95,7 @@ RUN pip install \
     deepspeed \
     numpy \
     opencv_python \
+    opencv_python_headless \
     tqdm \
     watermark \
     kornia \
