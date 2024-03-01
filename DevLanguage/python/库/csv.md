@@ -7,7 +7,8 @@
 - 对文件对象创建csv reader
 
   ```python
-  reader = csv.reader(f)
+  with open(file_path,'r') as f:
+  	reader = csv.reader(f)
   ```
 
 - 逐行读取，每行是一个list

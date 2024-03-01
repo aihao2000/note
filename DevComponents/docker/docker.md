@@ -78,13 +78,51 @@ FROM pytorch/pytorch:2.1.1-cuda12.1-cudnn8-runtime
 docker image build . --build-arg UID=$(id -u) --tag aihao_worksapce:v1
 ```
 
+### examples
+
+```dockerfile
+FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+LABEL author="aihao2000" email="aihao2000@outlook.com"
+RUN pip install \ 
+    diffusers \
+    transformers \
+    huggingface_hub \
+    accelerate \
+    tensorboard \
+    wandb \
+    datasets \
+    bitsandbytes \
+    deepspeed \
+    numpy \
+    opencv_python \
+    opencv_python_headless \
+    tqdm \
+    watermark \
+    kornia \
+    timm \
+    pytorch-lightning \
+    scipy \
+    jupyter \
+    && pip install xformers --index-url https://download.pytorch.org/whl/cu118 \
+    && pip cache purge \
+    && conda clean -all
+RUN apt update && apt install -y git \
+    git-lfs \
+    vim \
+    curl \
+    wget \
+    tmux \
+    rsync \
+    && rm -rf /var/lib/apt/lists/* && apt clean && apt autoremove -y
+```
+
 
 
 ```dockerfile
 FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
 LABEL author="aihao2000" email="aihao2000@outlook.com"
 RUN pip install \ 
-    diffusers==0.21.0 \
+    diffusers \
     transformers \
     huggingface_hub \
     accelerate \
