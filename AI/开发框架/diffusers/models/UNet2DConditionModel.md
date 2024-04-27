@@ -96,7 +96,7 @@ encoder_hid_dim_type包含：
 - text_image_proj
 - image_proj
 
-### class_emvedding
+### class_embedding
 
 ```python
 # class embedding

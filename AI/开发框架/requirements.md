@@ -27,5 +27,6 @@ kornia
 timm
 pytorch-lightning
 scipy
+opencv-python-headless
 ```
 
